@@ -1,10 +1,10 @@
-﻿@model ASP_WorkShop_MVC.Models.BOOK_DATA
+﻿@model  ASP_WorkShop_MVC.Models.BOOK_DATA
 
 @{
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>編輯書籍</h2>
 
 
 @using (Html.BeginForm())
@@ -12,13 +12,13 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>BOOK_DATA</h4>
+        
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.BOOK_ID)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.BOOK_NAME, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.BOOK_NAME, "書籍名稱", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.BOOK_NAME, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.BOOK_NAME, "", new { @class = "text-danger" })
@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.BOOK_CLASS, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.BOOK_CLASS, "書籍類別", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.BOOK_CLASS, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.BOOK_CLASS, "", new { @class = "text-danger" })
@@ -34,7 +34,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.BOOK_KEEPER, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.BOOK_KEEPER, "借閱人", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.BOOK_KEEPER, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.BOOK_KEEPER, "", new { @class = "text-danger" })
@@ -42,7 +42,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.BOOK_STATUS, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.BOOK_STATUS, "借閱狀態", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.BOOK_STATUS, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.BOOK_STATUS, "", new { @class = "text-danger" })
@@ -50,7 +50,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.BOOK_BOUGHT_DATE, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.BOOK_BOUGHT_DATE, "購買日期", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.BOOK_BOUGHT_DATE, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.BOOK_BOUGHT_DATE, "", new { @class = "text-danger" })
@@ -58,7 +58,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.BOOK_AUTHOR, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.BOOK_AUTHOR, "作者", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.BOOK_AUTHOR, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.BOOK_AUTHOR, "", new { @class = "text-danger" })
@@ -66,7 +66,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.BOOK_PUBLISHER, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.BOOK_PUBLISHER, "出版社", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.BOOK_PUBLISHER, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.BOOK_PUBLISHER, "", new { @class = "text-danger" })
@@ -74,7 +74,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.BOOK_NOTE, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.BOOK_NOTE, "內容簡介", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.BOOK_NOTE, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.BOOK_NOTE, "", new { @class = "text-danger" })
@@ -83,14 +83,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="存檔" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("回前一頁", "Index")
 </div>
 
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>

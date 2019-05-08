@@ -4,36 +4,37 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>圖書維護</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="@Url.Action("Create")" class="btn btn-info">新增書籍</a>
+    <a href="@Url.Action("search")" class="btn btn-success">搜尋書籍</a>
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.BOOK_NAME)
+            <p @Html.DisplayNameFor(model => model.FirstOrDefault().BOOK_NAME)>書籍名稱</p>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BOOK_CLASS)
+            <p @Html.DisplayNameFor(model => model.FirstOrDefault().BOOK_CLASS)>書籍類別</p>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BOOK_KEEPER)
+            <p @Html.DisplayNameFor(model => model.FirstOrDefault().BOOK_KEEPER)>借閱者</p>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BOOK_STATUS)
+            <p @Html.DisplayNameFor(model => model.FirstOrDefault().BOOK_STATUS)>書籍狀態</p>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BOOK_BOUGHT_DATE)
+            <p @Html.DisplayNameFor(model => model.FirstOrDefault().BOOK_BOUGHT_DATE)>購買日期</p>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BOOK_AUTHOR)
+            <p @Html.DisplayNameFor(model => model.FirstOrDefault().BOOK_AUTHOR)>作者</p>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BOOK_PUBLISHER)
+            <p @Html.DisplayNameFor(model => model.FirstOrDefault().BOOK_PUBLISHER)>出版社</p>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BOOK_NOTE)
+            <p @Html.DisplayNameFor(model => model.FirstOrDefault().BOOK_NOTE)>內容簡介</p>
         </th>
         <th></th>
     </tr>
@@ -65,11 +66,10 @@
             @Html.DisplayFor(modelItem => item.BOOK_NOTE)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { bookid=item.BOOK_ID }) |
-            @Html.ActionLink("Details", "Details", new { bookid=item.BOOK_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { bookid=item.BOOK_ID })
+            <a href="@Url.Action( "Edit", new { bookid=item.BOOK_ID })" class="btn btn-warning">編輯</a>
+            <a onclick="return confirm('確定刪除嗎?');" href="@Url.Action( "Delete", new { bookid=item.BOOK_ID })" class="btn btn-danger">刪除</a>
         </td>
-    </tr>
+</tr>
 }
 
 </table>

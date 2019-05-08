@@ -62,6 +62,13 @@ namespace ASP_WorkShop_MVC.Controllers
 
         }
 
+        public ActionResult search(string searching)
+        {
+            //show Book_data 內的資料 遞減排序
+            var book = db.BOOK_DATA.Where(x => x.BOOK_NAME.Contains(searching) || searching == null).ToList();
+            return View(book);
+        }
+
 
     }
 }
